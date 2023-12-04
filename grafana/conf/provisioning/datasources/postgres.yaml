@@ -1,0 +1,22 @@
+apiVersion: 1
+
+
+datasources:
+  - name: Postgres
+    type: postgres
+    url: timescaledb:5432
+    user: grafana
+    database: youtube_trends
+    isDefault: true
+    jsonData:
+      database: youtube_trends
+      sslmode: 'disable'
+      maxOpenConns: 100
+      maxIdleConns: 100
+      maxIdleConnsAuto: true
+      connMaxLifetime: 14400
+      postgresVersion: 1500
+      timescaledb: true
+    secureJsonData:
+      password: 'password'
+

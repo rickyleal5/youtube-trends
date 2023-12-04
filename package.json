@@ -1,0 +1,109 @@
+{
+  "name": "youtube-trends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./youtube/src/start.js",
+  "exports": "./youtube/src/start.js",
+  "type": "module",
+  "private": true,
+  "author": "Ricky Leal",
+  "license": "",
+  "engine": {
+    "node": "18.18.0",
+    "npm": "9.8.1"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "start": "bnr start",
+    "docker:up": "bnr docker:up",
+    "docker:down": "bnr docker:down",
+    "docker:timescaledb:up": "bnr docker:timescaledb:up",
+    "docker:timescaledb:down": "bnr docker:timescaledb:down",
+    "docker:grafana:up": "bnr docker:grafana:up",
+    "docker:grafana:down": "bnr docker:grafana:down",
+    "docker:pgadmin:up": "bnr docker:pgadmin:up",
+    "docker:pgadmin:down": "bnr docker:pgadmin:down",
+    "debug": "bnr debug",
+    "test": "bnr test",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "setUpTest": "bnr setUpTest"
+  },
+  "betterScripts": {
+    "start": {
+      "command": "node --max-old-space-size=1024 ./youtube/src/start.js",
+      "env": {
+        "DEBUG": "youtube,database"
+      }
+    },
+    "docker:up": {
+      "command": "docker compose -f docker-compose.yaml --profile youtube up -d"
+    },
+    "docker:down": {
+      "command": "docker compose -f docker-compose.yaml --profile youtube down --rmi local -v"
+    },
+    "docker:timescaledb:up": {
+      "command": "docker compose -f docker-compose.yaml --profile timescaledb up -d"
+    },
+    "docker:timescaledb:down": {
+      "command": "docker compose -f docker-compose.yaml --profile timescaledb down --rmi local -v"
+    },
+    "docker:grafana:up": {
+      "command": "docker compose -f docker-compose.yaml --profile grafana up -d"
+    },
+    "docker:grafana:down": {
+      "command": "docker compose -f docker-compose.yaml --profile grafana down --rmi local -v"
+    },
+    "docker:pgadmin:up": {
+      "command": "docker compose -f docker-compose.yaml --profile pgadmin4 up -d"
+    },
+    "docker:pgadmin:down": {
+      "command": "docker compose -f docker-compose.yaml --profile pgadmin4 down --rmi local -v"
+    },
+    "debug": {
+      "command": "0x ./youtube/src/start.js",
+      "env": {
+        "DEBUG": "youtube,database"
+      }
+    },
+    "test": {
+      "command": "c8 mocha --recursive --timeout 5000",
+      "env": {
+        "DEBUG": "test",
+        "DATABASE": "youtube_test",
+        "DATA_FOLDER": "./test/mocks/files",
+        "CHUNK_SIZE": 2
+      }
+    },
+    "setUpTest": {
+      "command": "node ./test/setUp.js",
+      "env": {
+        "DEBUG": "test",
+        "DATABASE": "postgres",
+        "SEQUELIZE_USER": "postgres"
+      }
+    }
+  },
+  "dependencies": {
+    "better-npm-run": "^0.1.1",
+    "csv-parser": "^3.0.0",
+    "debug": "^4.3.4",
+    "dotenv": "^16.3.1",
+    "i18n-iso-countries": "^7.7.0",
+    "lodash": "^4.17.21",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.34.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "c8": "^8.0.1",
+    "chai": "^4.3.10",
+    "eslint": "^8.53.0",
+    "mocha": "^10.2.0",
+    "prettier": "^3.0.3",
+    "sequelize-cli": "^6.6.2"
+  }
+}

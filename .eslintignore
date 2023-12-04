@@ -1,0 +1,13 @@
+migrations
+coverage
+config
+grafana
+node_modules
+pgadmin4
+timescaledb
+.c8rc.json
+.eslintrc.cjs
+docker-compose.yaml
+package.json
+package-lock.json
+README.md

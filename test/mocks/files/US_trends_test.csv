@@ -1,0 +1,5 @@
+video_id,title,publishedAt,channelId,channelTitle,categoryId,trending_date,tags,view_count,likes,dislikes,comment_count,thumbnail_link,comments_disabled,ratings_disabled,description
+video1,Movie 1 recap,2023-01-01T00:00:00Z,channel1,Movie Recaps,1,2023-02-01T00:00:00Z,movie|cinema|anime,423489,12784,0,234,https://example.com/video1/default.jpg,false,false,Podcast about Movie 1
+video2,My new sedan,2023-01-01T00:00:00Z,channel2,Cars,2,2023-02-01T00:00:00Z,fast|slow|car|speed,130293,34284,1,2384,https://example.com/video2/default.jpg,false,false,Look at my new car
+video3,Relaxing sounds,2023-01-01T00:00:00Z,channel3,Good Music,3,2023-02-01T00:00:00Z,[None],234534,34224,0,0,https://example.com/video3/default.jpg,true,false,Music to relax
+video3,Relaxing sounds,2023-01-01T00:00:00Z,channel3,Good Music,3,2023-02-02T00:00:00Z,[None],234534,34224,0,0,https://example.com/video3/default.jpg,true,false,Music to relax

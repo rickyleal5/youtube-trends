@@ -1,0 +1,36 @@
+{
+    "kind": "category",
+    "etag": "qwerty",
+    "items": [
+        {
+            "kind": "category",
+            "etag": "qwerty1",
+            "id": "1",
+            "snippet": {
+                "title": "Film & Animation",
+                "assignable": true,
+                "channelId": "1q2w3e4r5t6y"
+            }
+        },
+        {
+            "kind": "category",
+            "etag": "qwerty2",
+            "id": "2",
+            "snippet": {
+                "title": "Autos & Vehicles",
+                "assignable": true,
+                "channelId": "1q2w3e4r5t6y"
+            }
+        },
+        {
+            "kind": "category",
+            "etag": "qwerty3",
+            "id": "3",
+            "snippet": {
+                "title": "Music",
+                "assignable": true,
+                "channelId": "1q2w3e4r5t6y"
+            }
+        }
+    ]
+}
